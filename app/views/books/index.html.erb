@@ -29,4 +29,5 @@
   <br>
 
   <%= link_to 'New Book', new_book_path, { class: "btn btn-primary btn-lg" } %>
+  <%= link_to 'Logout', destroy_admin_session_path, { class: "btn btn-primary btn-lg", method: :delete, data: { confirm: 'Are you sure?' } } %>
 </div>

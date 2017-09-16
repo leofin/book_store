@@ -83,6 +83,8 @@ test:
 #
 production:
   <<: *default
-  database: book_store_production
-  username: book_store
-  password: <%= ENV['BOOK_STORE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: d48tkmgjpqajqo
+  encoding: unicode
+  host: <%= ENV["POSTGRES_URL"] %>
+  user: postgres

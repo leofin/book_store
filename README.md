@@ -12,6 +12,7 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+ - rake db:create db:migrate
 
 * Database initialization
 
@@ -22,3 +23,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Ao adicionar gemas, é necessario rebuildar a imagem do docker:
+- docker build .
