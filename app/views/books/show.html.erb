@@ -1,6 +1,10 @@
 <div class="jumbotron">
   <p id="notice"><%= notice %></p>
-
+  <div class="form-group">
+    <%= link_to 'Edit', edit_book_path(@book) , { class: "btn btn-primary btn-lg" } %>
+    <%= link_to 'Back', books_path, { class: "btn btn-primary btn-lg" } %>
+  </div>
+  <h1>Book(<%= @book.id %>)</h1>
   <div class="container">
     <div class="row">
       <div class="col-6 col-sm-6 col-lg-6">
@@ -21,10 +25,6 @@
             </h5>
           </div>
         </div>
-      </div>
-      <div class="col-6 col-sm-6 col-lg-6">
-        <%= link_to 'Edit', edit_book_path(@book) , { class: "btn btn-primary btn-lg" } %>
-        <%= link_to 'Back', books_path, { class: "btn btn-primary btn-lg" } %>
       </div>
     </div>
   </div>
