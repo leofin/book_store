@@ -1,6 +1,13 @@
-<h1>Editing Book</h1>
+<div class="jumbotron">
+  <div class="form-group">
+    <div class="form-group">
+      <%= link_to 'Show', @book, { class: "btn btn-primary btn-lg" }%>
+      <%= link_to 'Back', books_path, { class: "btn btn-primary btn-lg" } %>
+    </div>
+    
+    <h1>Editing Book</h1>
 
-<%= render 'form', book: @book %>
+    <%= render 'form', book: @book %>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+  </div>
+</div>

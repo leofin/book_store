@@ -1,27 +1,40 @@
-<%= form_for(book) do |f| %>
-  <% if book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+<%= form_for book, :html => { class: 'form-horizontal' } do |f| %>
+  <fieldset>
+    <% if book.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+        <ul>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="form-group">
+      <label for="inputTitle" class="col-lg-2 control-label">Title</label>
+      <!-- <input type="text" class="form-control" id="inputTitle" placeholder="Title"> -->
+      <%= text_field(:book, :title, size: 20, required: true) %>
     </div>
-  <% end %>
-
-  <div class="form-group">
-    <label for="inputTitle">Title</label>
-    <!-- <input type="text" class="form-control" id="inputTitle" placeholder="Title"> -->
-    <%= text_field(:book, :title, size: 20) %>
-  </div>
-  <div class="form-group">
-    <label for="inputDescription">Description</label>
-    <!-- <input type="text" class="form-control" id="inputDescription" placeholder="Password"> -->
-    <%= text_field(:book, :description, size: 80) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+      <label for="inputDescription" class="col-lg-2 control-label" >Author</label>
+      <!-- <input type="text" class="form-control" id="inputDescription" placeholder="Password"> -->
+      <%= text_field(:book, :author, size: 20, required: true) %>
+    </div>
+    <div class="form-group">
+      <label for="inputDescription" class="col-lg-2 control-label" >Imagem(URL)</label>
+      <!-- <input type="text" class="form-control" id="inputDescription" placeholder="Password"> -->
+      <%= text_field(:book, :url, required: true) %>
+    </div>
+    <div class="form-group">
+      <div>
+      <label for="inputDescription" class="col-lg-2 control-label" >Description</label>
+      <!-- <input type="text" class="form-control" id="inputDescription" placeholder="Password"> -->
+      </div>
+      <div>
+        <%= text_area(:book, :description, cols: 50, rows: 10, maxlength: 1024, required: true) %>
+      </div>
+    </div>
+      <%= f.submit 'Save', { class: "btn btn-primary btn-lg" } %>
+  </fieldset>
 <% end %>
