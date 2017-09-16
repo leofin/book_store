@@ -87,4 +87,4 @@ production:
   database: d48tkmgjpqajqo
   encoding: unicode
   host: <%= ENV["POSTGRES_URL"] %>
-  user: postgres
+  user: yykrefpanqjkrs
