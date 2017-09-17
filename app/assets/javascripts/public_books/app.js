@@ -1,6 +1,7 @@
+var order = "asc";
 
 function call_api(){
-  var endpoint = '{{ env('API_BOOKS') }}';
+  var endpoint = "http://localhost:3000/api/books";
   var params = getParams();
 
   $.getJSON(endpoint + params, function populate_books(data){
@@ -18,10 +19,9 @@ function call_api(){
 function getParams(){
   var $search_field = document.getElementsByName("search_field")[0];
   var $author = document.getElementsByName("author")[0];
-  debugger;
   var query = $search_field ? $search_field.value : "";
   var author_filter = $author ? $author.value : "";
-  return "?query=" + query + "&author=" + author_filter;
+  return "?query=" + query + "&author=" + author_filter + "&order=" + order;
 }
 
 var TableRow = function(data, id) {
@@ -37,5 +37,18 @@ var TableRow = function(data, id) {
 
   return t;
 };
+
+function orderTable(){
+  var asc = "fa-sort-asc";
+  var desc = "fa-sort-desc";
+  var $order = $("#order");
+
+  $order.toggleClass(asc);
+  $order.toggleClass(desc);
+
+  order = order == "asc" ? "desc": "asc"
+
+  call_api();
+}
 
 call_api();

@@ -1,11 +1,9 @@
 <html>
   <head>
-    <title>My Angular App!</title>
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="jumbotron">
-
       <div class="row">
         <div class="col-xs-4">
           <input name="search_field" type="text" class="form-control" placeholder="Pesquisar titulo ou descrição">
@@ -14,15 +12,13 @@
           <input name="author" type="text" class="form-control" placeholder="autor">
         </div>
         <div class="col-xs-4">
-          <button onclick="call_api();" class="btn btn-primary btn-lg"> Search </button>
+          <button onclick="call_api();" class="btn btn-primary btn-lg">Search</button>
         </div>
       </div>
-
-
       <table class="table table-sm">
         <thead>
           <tr>
-            <th>Title</th>
+            <th>Title<i id="order" class="fa fa-fw fa-sort fa-sort-asc" onclick="orderTable();"></i></th>
             <th>Author</th>
             <th>Image</th>
             <th>Description</th>
@@ -32,11 +28,6 @@
         <tbody>
         </tbody>
       </table>
-      <div class="panel-footer">
-        <nav id="pagination" class="text-center">
-        </nav>
-        <input name="page" type="hidden" value="1" />
-      </div>
     <a href="/books">Cadastrar novos livros</a>
   </body>
 </html>
