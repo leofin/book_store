@@ -6,23 +6,37 @@
   <body>
     <div class="jumbotron">
 
-        <button onclick="call_api();"> Search </button> 
+      <div class="row">
+        <div class="col-xs-4">
+          <input name="search_field" type="text" class="form-control" placeholder="Pesquisar titulo ou descrição">
+        </div>
+        <div class="col-xs-4">
+          <input name="author" type="text" class="form-control" placeholder="autor">
+        </div>
+        <div class="col-xs-4">
+          <button onclick="call_api();" class="btn btn-primary btn-lg"> Search </button>
+        </div>
+      </div>
 
-        <table class="table table-sm">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Image</th>
-              <th>Description</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
 
-    </div>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div class="panel-footer">
+        <nav id="pagination" class="text-center">
+        </nav>
+        <input name="page" type="hidden" value="1" />
+      </div>
     <a href="/books">Cadastrar novos livros</a>
   </body>
 </html>

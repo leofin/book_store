@@ -1,9 +1,9 @@
 
 function call_api(){
-  var endpoint = "http://localhost:3000/api/books";
-  var params = "";
-  $.getJSON(endpoint, params, function populate_books(data){
-    debugger;
+  var endpoint = '{{ env('API_BOOKS') }}';
+  var params = getParams();
+
+  $.getJSON(endpoint + params, function populate_books(data){
     var $tableBody = $('table tbody');
     var tableBodyData = '';
 
@@ -13,6 +13,15 @@ function call_api(){
 
     $tableBody.replaceWith('<tbody>' + tableBodyData + '</tbody>');
   });
+}
+
+function getParams(){
+  var $search_field = document.getElementsByName("search_field")[0];
+  var $author = document.getElementsByName("author")[0];
+  debugger;
+  var query = $search_field ? $search_field.value : "";
+  var author_filter = $author ? $author.value : "";
+  return "?query=" + query + "&author=" + author_filter;
 }
 
 var TableRow = function(data, id) {
@@ -28,3 +37,5 @@ var TableRow = function(data, id) {
 
   return t;
 };
+
+call_api();

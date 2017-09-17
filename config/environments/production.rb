@@ -84,4 +84,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ENV['API_BOOKS'] = ENV['API_BOOKS'] || "http://localhost:3000/api/books"
 end
