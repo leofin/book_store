@@ -54,9 +54,13 @@ Não foi feito specs, além dos gerados por padrão do modelo e controle.
 Utilização:
 
 Foi colocado o projeto para rodar num ambiente Heroku como ambiente de produção.
+
 Acessar https://book-store-fin.herokuapp.com/
+
 Irá direcionar para o index do projeto com a pagina de pesquisa de livros.
+
 Clicando no texto "Cadastrar novos livros", será direcionado para a pagina de login, após loggar ou cadastrar um novo usuario, será direcionado para a pagina de listagem de livros cadastrados, permitindo a edição, exibição, deleção e inserção de novos livros no sistema.
+
 Desejando voltar para a tela anterior só clicar no botão "Search page".
 
 Foi feito em ingles as telas de crud de livro e a tela de pesquisa em português por decisões proprias.
