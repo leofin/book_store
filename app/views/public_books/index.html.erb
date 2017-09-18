@@ -6,13 +6,13 @@
     <div class="jumbotron">
       <div class="row">
         <div class="col-xs-4">
-          <input name="search_field" type="text" class="form-control" placeholder="Pesquisar titulo ou descrição">
+          <input id="search_field" type="text" class="form-control" placeholder="Pesquisar titulo ou descrição">
         </div>
         <div class="col-xs-4">
-          <input name="author" type="text" class="form-control" placeholder="autor">
+          <input id="author" type="text" class="form-control" placeholder="autor">
         </div>
         <div class="col-xs-4">
-          <button onclick="call_api();" class="btn btn-primary btn-lg">Search</button>
+          <button onclick="search_books();" class="btn btn-primary btn-lg">Search</button>
         </div>
       </div>
       <table class="table table-sm">
@@ -22,12 +22,25 @@
             <th>Author</th>
             <th>Image</th>
             <th>Description</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
         </tbody>
       </table>
+      <div class="panel-footer">
+        <nav class="text-center">
+          <ul id="pagination" class="pagination">
+          </ul>
+        </nav>
+        Total por pagina
+        <select class="input-sm" id="per-page" onclick="search_books();">
+          <option value="5">5</option>
+          <option value="10" selected="true">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
     <a href="/books">Cadastrar novos livros</a>
+    <%= javascript_include_tag "public_books/index" %> 
   </body>
 </html>

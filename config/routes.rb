@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     get '/books', to: 'books#list', as: :get_books
   end
 
-  get '/', to: 'public_books#index', as: :get_index
+  get '/', to: 'public_books#index', as: :index
 
 end
