@@ -4,7 +4,7 @@ var total = 0;
 var size = 10;
 
 function search_books(){
-  var endpoint = "http://localhost:3000/api/books";
+  var endpoint = "https://book-store-fin.herokuapp.com/api/books";
   var params = getParams();
 
   $.getJSON(endpoint + params, function populate_books(data){
