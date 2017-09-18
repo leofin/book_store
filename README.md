@@ -11,19 +11,28 @@ Rails 5.0.0.1
 Download and install docker and docker-compose
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04
  Install docker:
+ 
  1- wget -qO- https://get.docker.com/ | sh
+ 
  2- sudo apt-get -y install python-pip (optional)
  Install docker-compose:
+ 
  1- sudo apt-get -y install python-pip
+ 
  2- sudo pip install docker-compose
 * Database creation
  - rake db:create db:migrate
 * Deployment instructions
  - After installed docker and docker-compose
+ 
  1- git clone git@github.com:leofin/book_store.git
+ 
  2- cd book_store
+ 
  3- docker build .
+ 
  4- docker-compose up
+ 
  5- Access localhost:3000
 
 ----------------------------------------------------------------------------------------------------------
