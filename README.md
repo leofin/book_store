@@ -34,7 +34,9 @@ Install docker-compose:
 Database creation:
 
 - rake db:create db:migrate
-- Deployment instructions
+
+Deployment instructions
+
 - After installed docker and docker-compose
  
  1- git clone git@github.com:leofin/book_store.git
