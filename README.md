@@ -1,13 +1,17 @@
 # README
 
-- Ruby version
+Ruby version:
+
 ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-linux]
--  Rails varsion
+Rails varsion:
+
 Rails 5.0.0.1
--  System dependencies
+
+System dependencies:
 1- Docker
 2- Docker-compose
-- Configuration
+
+Configuration:
 
 Download and install docker and docker-compose
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04
@@ -24,10 +28,11 @@ Install docker-compose:
  
  2- sudo pip install docker-compose
 
-- Database creation
- - rake db:create db:migrate
+Database creation:
+
+- rake db:create db:migrate
 - Deployment instructions
- - After installed docker and docker-compose
+- After installed docker and docker-compose
  
  1- git clone git@github.com:leofin/book_store.git
  
